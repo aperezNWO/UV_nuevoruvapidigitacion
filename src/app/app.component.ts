@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
-
+import { Component, VERSION } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'nuevoruvapidigitacion';
+    //
+    title             : string = '[NUEVO RUV- CONSULTA - API DIGITACION]';
+    appName           : string = "[NUEVO RUV- CONSULTA - API DIGITACION]";
+    appVersion        : string = '1.0.0.1';
+    runtimeVersion    : string = VERSION.full;
 }
