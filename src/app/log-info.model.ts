@@ -1,9 +1,3 @@
-export interface LogEntry {
-  id_Column   :string;
-  pageName    :string;
-  accessDate  :string;
-  ipValue     :string;
-}
 //
 export class  SearchCriteria
 {
@@ -22,25 +16,18 @@ export class  SearchCriteria
     }
 }
 
-export class DynamicForm
+export interface DynamicForm
 {
-    //
-    constructor(
-        public GRUPO         : string | undefined
-    ,   public OPCION        : string | undefined
-    ,   public VALOR         : string | undefined
-    ,   public DESC_VALOR    : string | undefined
-    ,   public ID_PMT_OPCION : number | undefined
-    ,   public OP_ID         : number | undefined
-    ,   public TIPO_DATO     : string | undefined
-    ,   public MS_COMBO      : number | undefined
-    ,   public MS_PADRE      : number | undefined
-    ,   public MS_CONDI      : string | undefined
-
-    )
-    {
-        //
-    }
+       GRUPO         : string | undefined;
+       OPCION        : string | undefined;
+       VALOR         : string | undefined;
+       DESC_VALOR    : string | undefined;
+       ID_PMT_OPCION : number | undefined;
+       OP_ID         : number | undefined;
+       TIPO_DATO     : string | undefined;
+       MS_COMBO      : number | undefined;
+       MS_PADRE      : number | undefined;
+       MS_CONDI      : string | undefined;
 }
 /*
     {"GRUPO":"Folios y anexos de la Declaracion "

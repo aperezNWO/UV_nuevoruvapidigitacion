@@ -13,9 +13,15 @@ import   ApiDigitacionService                            from '../api-digitacion
   styleUrls: ['./apidigitacionweb.component.scss']
 })
 //
-export class ApidigitacionwebComponent implements OnInit {
+export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
   //
+  dataSource                         = new MatTableDataSource<DynamicForm>();
+  // 
   informeLogRemoto!                  : Observable<DynamicForm[]>;
+  //
+  displayedColumns                   : string[] = ['GRUPO'/*, 'OPCION', 'VALOR', 'DESC_VALOR','ID_PMT_OPCION','OP_ID','TIPO_DATO','MS_COMBO','MS_PADRE','MS_CONDI'*/];
+  //
+  @ViewChild("paginator" ,{read:MatPaginator}) paginator!:  MatPaginator;
   //
   constructor(private logInfoService: ApiDigitacionService, private formBuilder: FormBuilder) {
     //
@@ -26,17 +32,33 @@ export class ApidigitacionwebComponent implements OnInit {
     this.update();
   }
   //
-  update(/*_searchCriteria : SearchCriteria*/):void {
+  ngAfterViewInit():void {
     //
-    this.informeLogRemoto = this.logInfoService.getLogRemotoPOST();
+  }
+  //
+  update():void {
     //
-    const myObserver = {
+    this.informeLogRemoto     = this.logInfoService.getLogRemotoPOST();
+    //
+    const myObserver          = {
       next: (p_logEntry: DynamicForm[])     => { 
         //
-        console.log('Observer got a next value: ' + JSON.stringify(p_logEntry));
+        //console.log('Observer got a next value: ' + JSON.stringify(p_logEntry));
+        //console.log('Observer got a next value: ' + p_logEntry);
         //
-        //this.dataSource           = new MatTableDataSource<LogEntry>(p_logEntry);
-        //this.dataSource.paginator = this.paginator;
+        //this.dataSource           = new MatTableDataSource<DynamicForm>(p_logEntry);
+        //
+        //let jsonArray : JSON = JSON.parse(p_logEntry);
+        //let arrayForm : DynamicForm[];
+
+        //jsonArray.forEach(_p_logEntry=>{
+        //  console.log('Observer got a item value:');
+        //});
+        //      
+        
+        //
+        //this.dataSource             = new MatTableDataSource<DynamicForm>(jsonArray);
+        //this.dataSource.paginator   = this.paginator;
       },
       error: (err: Error)       => console.error('Observer got an error: ' + err),
       complete: () => console.log('Observer got a complete notification'),

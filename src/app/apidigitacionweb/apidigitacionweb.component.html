@@ -1,1 +1,59 @@
-<p>apidigitacionweb works!</p>
+<!--
+    <ng-container matColumnDef="OPCION">
+    <th mat-header-cell *matHeaderCellDef>OPCION</th>
+    <td mat-cell *matCellDef="let element">{{ element.OPCION }}</td>
+    </ng-container>
+    <ng-container matColumnDef="VALOR">
+    <th mat-header-cell *matHeaderCellDef>VALOR</th>
+    <td mat-cell *matCellDef="let element">{{ element.VALOR }}</td>
+    </ng-container>
+    <ng-container matColumnDef="DESC_VALOR">
+    <th mat-header-cell *matHeaderCellDef>DESC_VALOR</th>
+    <td mat-cell *matCellDef="let element">{{ element.DESC_VALOR }}</td>
+    </ng-container>
+    <ng-container matColumnDef="ID_PMT_OPCION">
+    <th mat-header-cell *matHeaderCellDef>ID_PMT_OPCION</th>
+    <td mat-cell *matCellDef="let element">{{ element.ID_PMT_OPCION }}</td>
+    </ng-container>
+    <ng-container matColumnDef="OP_ID">
+    <th mat-header-cell *matHeaderCellDef>OP_ID</th>
+    <td mat-cell *matCellDef="let element">{{ element.OP_ID }}</td>
+    </ng-container>
+    <ng-container matColumnDef="TIPO_DATO">
+    <th mat-header-cell *matHeaderCellDef>TIPO_DATO</th>
+    <td mat-cell *matCellDef="let element">{{ element.TIPO_DATO }}</td>
+    </ng-container>
+    <ng-container matColumnDef="MS_COMBO">
+    <th mat-header-cell *matHeaderCellDef>MS_COMBO</th>
+    <td mat-cell *matCellDef="let element">{{ element.MS_COMBO }}</td>
+    </ng-container>
+    <ng-container matColumnDef="MS_PADRE">
+    <th mat-header-cell *matHeaderCellDef>MS_PADRE</th>
+    <td mat-cell *matCellDef="let element">{{ element.MS_PADRE }}</td>
+    </ng-container>
+    <ng-container matColumnDef="MS_CONDI">
+    <th mat-header-cell *matHeaderCellDef>MS_CONDI</th>
+    <td mat-cell *matCellDef="let element">{{ element.MS_CONDI }}</td>
+    </ng-container>
+-->
+<div class="mat-elevation-z8">
+    <hr>
+    <div class="scrollbar">
+        <table  mat-table  [dataSource]="dataSource"  class="mat-elevation-z8" aria-label="informelogremoto">
+         <ng-container matColumnDef="GRUPO">
+            <th mat-header-cell *matHeaderCellDef>GRUPO</th>
+            <td mat-cell *matCellDef="let element">{{ element.GRUPO}}</td>
+          </ng-container>
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </div>
+    <hr>
+    <mat-paginator #paginator="matPaginator"
+        class="demo-paginator" 
+        [length]=""
+        [pageSize]="10"
+        [pageSizeOptions]="[3, 10, 25, 100]"
+        aria-label="informelogremoto">
+    </mat-paginator>
+</div>      
