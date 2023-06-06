@@ -32,7 +32,7 @@ export default class ApiDigitacionService {
       //
       let _body       : JSON = JSON.parse("{\"P_PMT_MODULO\":140,\"P_ID_REG_MOD\":15}");
       //
-      return this.http.post<DynamicForm[]>(url,_body,HTTPOptions);   
+      return this.http.post<string>(url,_body,HTTPOptions);   
     }
     //
     getLogRemotoGET() {

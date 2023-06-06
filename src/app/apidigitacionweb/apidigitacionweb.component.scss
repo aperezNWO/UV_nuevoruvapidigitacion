@@ -1,27 +1,73 @@
+/******************************************************/
+/**  ESTILO DE COLUMNAS - INICIO
+/******************************************************/
 .mat-column-GRUPO {
     flex: none;
-    width: 100px;
+    width: 200px;
     padding: 1rem;
-  }
-/*
-.mat-column-DATE_TIME {
+}
+
+.mat-column-OPCION {
   flex: none;
-  width: 100px;
+  width: 300px;
   padding: 1rem;
 }
 
-.mat-column-TEXT_1_WEB {
+.mat-column-VALOR {
   flex: none;
-  width: 100px;
+  width: 20px;
   padding: 1rem;
 }
 
-.mat-column-TEXT_2_WEB {
+.mat-column-DESC_VALOR   {
   flex: none;
-  width: 100px;
+  width: 20px;
   padding: 1rem;
 }
-*/   
+
+.mat-column-ID_PMT_OPCION {
+  flex: none;
+  width: 20px;
+  padding: 1rem;
+}
+ 
+.mat-column-OP_ID {
+  flex: none;
+  width: 20px;
+  padding: 1rem;
+}
+
+.mat-column-TIPO_DATO {
+  flex: none;
+  width: 20px;
+  padding: 1rem;
+}
+
+.mat-column-MS_COMBO {
+  flex: none;
+  width: 20px;
+  padding: 1rem;
+}
+
+.mat-column-MS_PADRE {
+  flex: none;
+  width: 20px;
+  padding: 1rem;
+}
+
+.mat-column-MS_CONDI {
+  flex: none;
+  width: 20px;
+  padding: 1rem;
+}
+/******************************************************/
+/**  ESTILO DE COLUMNAS - FIN
+/******************************************************/
+
+/******************************************************/
+/**  ESTILO DE FORMULARIO DE BUSQUEDA  - INICIO
+/******************************************************/
+
 form {
   width: 40%;
   margin: 0 auto;
@@ -66,3 +112,7 @@ input+input {
 {
    color:bisque;   
 }
+
+/******************************************************/
+/**  ESTILO DE FORMULARIO DE BUSQUEDA  - FIN
+/******************************************************/
