@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------------------
+-- STRATEGY
+---------------------------------------------------------------------------------------------
+-- [_] publicar metodo GET. 
+       -- [_] Ejemplo : 
+              http://localhost:81/api/Digitacion/ConsultarFormularioDinamicoFnGET
+
+       -- [_] PARAMETROS: 
+
+              {
+                "P_PMT_MODULO": 140,
+                "P_ID_REG_MOD": 15
+              }
+
+              {"P_PMT_MODULO":140,"P_ID_REG_MOD":15}
+
+       -- [_] http://localhost:42652/api/Digitacion/ConsultarFormularioDinamicoFnGET?_parametros=%7B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22P_PMT_MODULO%22%3A%20140%2C%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22P_ID_REG_MOD%22%3A%2015%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D
+
+       -- [_] http://localhost:81/api/Digitacion/ConsultarFormularioDinamicoFnGET?_parametros=%7B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22P_PMT_MODULO%22%3A%20140%2C%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22P_ID_REG_MOD%22%3A%2015%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D
+
+       -- [_] http://localhost:81/api/Digitacion/ConsultarFormularioDinamicoFnGET?_parametros={%22P_PMT_MODULO%22:140,%22P_ID_REG_MOD%22:15}
+
+       -- [_] http://localhost:81/api/Digitacion/ConsultarFormularioDinamicoFnGET?_parametros={P_PMT_MODULO:140,P_ID_REG_MOD:15}
+
+---------------------------------------------------------------------------------------------
+-- [_] Consumir Método GET. 
+---------------------------------------------------------------------------------------------
+
+       -- [_] Cargar proyecto de ejemplo "ConsultaLogApp".
+
+       -- [_] componente APIDigitacion Web. 
+
+       -- [_] Punto de entrada. 
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
