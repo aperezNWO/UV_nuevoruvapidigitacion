@@ -28,7 +28,7 @@ export class ApidigitacionwebComponent implements OnInit {
   //
   update(/*_searchCriteria : SearchCriteria*/):void {
     //
-    this.informeLogRemoto = this.logInfoService.getLogRemoto();
+    this.informeLogRemoto = this.logInfoService.getLogRemotoPOST();
     //
     const myObserver = {
       next: (p_logEntry: DynamicForm[])     => { 

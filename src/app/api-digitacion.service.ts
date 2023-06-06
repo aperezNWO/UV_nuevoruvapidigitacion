@@ -12,18 +12,40 @@ export default class ApiDigitacionService {
     //
   }
   //
-  getLogRemoto() {
+  getLogRemotoPOST() {
+      //
+      /*
+      {
+        "P_PMT_MODULO": 140,
+        "P_ID_REG_MOD": 15
+      }
+      **/      
+      //
+      let url = 'http://localhost:81/api/Digitacion/ConsultarFormularioDinamicosp';
+      //
+      var HTTPOptions = {
+        headers: new HttpHeaders({
+             'Content-Type' : 'application/json'
+        }),
+        'responseType': 'text' as 'json'
+      }; 
+      //
+      let _body       : JSON = JSON.parse("{\"P_PMT_MODULO\":140,\"P_ID_REG_MOD\":15}");
+      //
+      return this.http.post<DynamicForm[]>(url,_body,HTTPOptions);   
+    }
     //
-    let url = 'http://localhost:81/api/Digitacion/ConsultarFormularioDinamicoFnGET?_parametros={P_PMT_MODULO:140,P_ID_REG_MOD:15}';
-    //
-    var HTTPOptions = {
-      headers: new HttpHeaders({
-          'Accept':'application/text'
-         //,'CORS'  : 'Access-Control-Allow-Origin'
-      }),
-      'responseType': 'text' as 'json'
-    }; 
-    //
-    return this.http.get<DynamicForm[]>(url/*,HTTPOptions*/);   
+    getLogRemotoGET() {
+      //
+      let url = 'http://localhost:81/api/Digitacion/ConsultarFormularioDinamicoFnGET?_parametros={P_PMT_MODULO:140,P_ID_REG_MOD:15}';
+      //
+      var HTTPOptions = {
+        headers: new HttpHeaders({
+            'Accept':'application/text'
+        }),
+        'responseType': 'text' as 'json'
+      }; 
+      //
+      return this.http.get<DynamicForm[]>(url/*,HTTPOptions*/);   
   }
 }

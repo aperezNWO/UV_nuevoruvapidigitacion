@@ -22,6 +22,18 @@
 
        -- [_] http://localhost:81/api/Digitacion/ConsultarFormularioDinamicoFnGET?_parametros={P_PMT_MODULO:140,P_ID_REG_MOD:15}
 
+       -- [_] M:APIDigitacion.Controllers.DigitacionController.ConsultarFormularioDinamicoSp(APIDigitacion.DTOs.FrmDinamicoDtoInput)
+
+              -- [_]  PARAMS:
+              /*
+              {
+                     "P_PMT_MODULO": 140,
+                     "P_ID_REG_MOD": 15
+              }
+              **/      
+              //
+              -- [_] url = 'http://localhost:81/api/Digitacion/ConsultarFormularioDinamicosp';
+
 ---------------------------------------------------------------------------------------------
 -- [_] Consumir Método GET. 
 ---------------------------------------------------------------------------------------------
