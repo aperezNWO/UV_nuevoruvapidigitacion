@@ -17,7 +17,7 @@ export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
   //
   dataSource                         = new MatTableDataSource<DynamicForm>();
   // 
-  //informeLogRemoto!                : Observable<DynamicForm[]>;
+  _textStatus                        : string = "";
   //
   informeLogRemotoSTR!               : Observable<string>;
   //
@@ -59,6 +59,8 @@ export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
       this.dataSource           = new MatTableDataSource<DynamicForm>();
       this.dataSource.paginator = this.paginator;
       //
+      this._textStatus          = "";
+      //
       this.searchForm   = this.formBuilder.group({
         _P_PMT_MODULO         : ["140" , Validators.required],
         _P_ID_REG_MOD         : ["15"  , Validators.required],
@@ -74,7 +76,11 @@ export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
         //
         console.log('RETURN VALUES : '  +  p_logEntry);
         //
-        let jsonParseResult        : [] =  JSON.parse(p_logEntry);
+        let jsonParseResult        : []     =  JSON.parse(p_logEntry);
+        //
+        let recordCount            : number = jsonParseResult.length;
+        //
+        this._textStatus          = "Se encontraron [" + recordCount + "] registros";
         //
         this.dataSource           = new MatTableDataSource<DynamicForm>(jsonParseResult);
         this.dataSource.paginator = this.paginator;
