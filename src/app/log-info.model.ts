@@ -15,7 +15,7 @@ export class  SearchCriteria
         //
     }
 }
-
+//
 export interface DynamicForm
 {
        GRUPO         : string | undefined;
@@ -29,15 +29,3 @@ export interface DynamicForm
        MS_PADRE      : number | undefined;
        MS_CONDI      : string | undefined;
 }
-/*
-    {"GRUPO":"Folios y anexos de la Declaracion "
-    ,"OPCION":"Por favor relacione la cantidad de anexos, soportes y folios que hacen parte de la declaración"
-    ,"VALOR":"0"
-    ,"DESC_VALOR":null
-    ,"ID_PMT_OPCION":131
-    ,"OP_ID":0
-    ,"TIPO_DATO":"E"
-    ,"MS_COMBO":null
-    ,"MS_PADRE":null
-    ,"MS_CONDI":null}
-*/

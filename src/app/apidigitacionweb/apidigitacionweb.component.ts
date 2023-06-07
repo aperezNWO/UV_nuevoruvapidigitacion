@@ -17,7 +17,7 @@ export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
   //
   dataSource                         = new MatTableDataSource<DynamicForm>();
   // 
-  //informeLogRemoto!                  : Observable<DynamicForm[]>;
+  //informeLogRemoto!                : Observable<DynamicForm[]>;
   //
   informeLogRemotoSTR!               : Observable<string>;
   //
@@ -25,22 +25,49 @@ export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
   //
   @ViewChild("paginator" ,{read:MatPaginator}) paginator!:  MatPaginator;
   //
+  searchForm   = this.formBuilder.group({
+      _P_PMT_MODULO         : ["140" , Validators.required],
+      _P_ID_REG_MOD         : ["15"  , Validators.required],
+  });
+  //
   constructor(private logInfoService: ApiDigitacionService, private formBuilder: FormBuilder) {
     //
   }
   //
   ngOnInit(): void {
     //
-    this.update();
   }
   //
   ngAfterViewInit():void {
     //
   }
-  //
-  update():void {
+  onSubmit():void
+  {
     //
-    this.informeLogRemotoSTR         = this.logInfoService.getLogRemotoPOST();
+    let _P_PMT_MODULO         : string = this.searchForm.value["_P_PMT_MODULO"]  || "";
+    let _P_ID_REG_MOD         : string = this.searchForm.value["_P_ID_REG_MOD"]  || "";  
+    let stringSearch          : string = "{\"P_PMT_MODULO\":"+ _P_PMT_MODULO + ",\"P_ID_REG_MOD\":"+ _P_ID_REG_MOD +"}";
+    //
+    this.update(stringSearch);
+  }
+  //
+  newSearch():void
+  {
+      //
+      console.warn("(NEW SEARCH)");
+      //
+      this.dataSource           = new MatTableDataSource<DynamicForm>();
+      this.dataSource.paginator = this.paginator;
+      //
+      this.searchForm   = this.formBuilder.group({
+        _P_PMT_MODULO         : ["140" , Validators.required],
+        _P_ID_REG_MOD         : ["15"  , Validators.required],
+      });
+  }
+  //
+  update(_param : string ):void {
+    //
+    this.informeLogRemotoSTR         = this.logInfoService.getLogRemotoPOST(_param);
     //
     const myObserver                 = {
       next: (p_logEntry: string)     => { 

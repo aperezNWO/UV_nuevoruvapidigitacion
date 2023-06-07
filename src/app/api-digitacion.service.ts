@@ -12,7 +12,7 @@ export default class ApiDigitacionService {
     //
   }
   //
-  getLogRemotoPOST() {
+  getLogRemotoPOST(_param : string) {
       //
       /*
       {
@@ -30,7 +30,7 @@ export default class ApiDigitacionService {
         'responseType': 'text' as 'json'
       }; 
       //
-      let _body       : JSON = JSON.parse("{\"P_PMT_MODULO\":140,\"P_ID_REG_MOD\":15}");
+      let _body       : JSON = JSON.parse(_param);
       //
       return this.http.post<string>(url,_body,HTTPOptions);   
     }

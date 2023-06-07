@@ -1,4 +1,28 @@
 <div class="mat-elevation-z8">
+    <hr>  
+    <div class="searchPanel">
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+         <!--P_ROW_NUM-->
+         <div>
+            <label for="_P_PMT_MODULO">
+               _P_PMT_MODULO :
+            </label>
+            <input id="_P_PMT_MODULO" type="text" formControlName="_P_PMT_MODULO">
+         </div>
+         <!--P_ROW_NUM-->
+         <div>
+            <label for="_P_ID_REG_MOD">
+               _P_ID_REG_MOD :
+            </label>
+            <input id="_P_ID_REG_MOD" type="text" formControlName="_P_ID_REG_MOD">
+         </div>
+         <hr>
+         <div align="right">
+            <button class="button" type="submit">Buscar</button>
+            <button class="button" type="button" (click)="newSearch()">Nueva</button>
+          </div>
+      </form>
+    </div>
     <hr>
     <div class="scrollbar">
         <table  mat-table  [dataSource]="dataSource"  class="mat-elevation-z8" aria-label="informelogremoto">

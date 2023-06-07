@@ -8,6 +8,6 @@ export class AppComponent {
     //
     title             : string = '[NUEVO RUV- CONSULTA - API DIGITACION]';
     appName           : string = "[NUEVO RUV- CONSULTA - API DIGITACION]";
-    appVersion        : string = '1.0.0.4';
+    appVersion        : string = '1.0.0.5';
     runtimeVersion    : string = VERSION.full;
 }
