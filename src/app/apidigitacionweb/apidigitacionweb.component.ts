@@ -17,7 +17,11 @@ export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
   //
   dataSource                         = new MatTableDataSource<DynamicForm>();
   // 
-  _textStatus                        : string = "";
+  td_textStatus                      : string = "";
+  //
+  td_buttonCaption                   : string = "[Buscar]";
+  //
+  td_formSubmit                      : boolean = false;
   //
   informeLogRemotoSTR!               : Observable<string>;
   //
@@ -59,7 +63,11 @@ export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
       this.dataSource           = new MatTableDataSource<DynamicForm>();
       this.dataSource.paginator = this.paginator;
       //
-      this._textStatus          = "";
+      this.td_textStatus          = "";
+      //
+      this.td_buttonCaption     = "[Buscar]";
+      //
+      this.td_formSubmit        = false;
       //
       this.searchForm   = this.formBuilder.group({
         _P_PMT_MODULO         : ["140" , Validators.required],
@@ -68,6 +76,10 @@ export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
   }
   //
   update(_param : string ):void {
+    //
+    this.td_buttonCaption     = "[Buscando por favor espere]";
+    //
+    this.td_formSubmit        = true;
     //
     this.informeLogRemotoSTR         = this.logInfoService.getLogRemotoPOST(_param);
     //
@@ -80,14 +92,31 @@ export class ApidigitacionwebComponent implements OnInit, AfterViewInit {
         //
         let recordCount            : number = jsonParseResult.length;
         //
-        this._textStatus          = "Se encontraron [" + recordCount + "] registros";
+        this.td_textStatus          = "Se encontraron [" + recordCount + "] registros";
         //
         this.dataSource           = new MatTableDataSource<DynamicForm>(jsonParseResult);
         this.dataSource.paginator = this.paginator;
         
       },
-      error: (err: Error)         => console.error('Observer got an error: ' + err),
-      complete: () => console.log('Observer got a complete notification'),
+      error: (err: Error)         => { 
+        //
+        console.error('Observer got an error: ' + err);
+        //
+        //
+        this.td_textStatus        = "Ha ocurrido un error";
+        //
+        this.td_buttonCaption     = "[Buscar]";
+        //
+        this.td_formSubmit        = false;
+      },
+      complete: () => {
+          //
+          console.log('Observer got a complete notification');
+          //
+          this.td_buttonCaption     = "[Buscar]";
+          //
+          this.td_formSubmit        = false;
+      },
     };
     //
     this.informeLogRemotoSTR.subscribe(myObserver);
