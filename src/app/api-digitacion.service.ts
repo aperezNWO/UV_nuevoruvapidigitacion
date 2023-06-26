@@ -21,7 +21,7 @@ export default class ApiDigitacionService {
       }
       **/      
       //      
-      let  url           = 'http://vivantopruebas.unidadvictimas.gov.co/ApiDigitacion/api/ApiDigitacion/ConsultarFormularioDinamicosp';
+      let  url           = 'http://vivantopruebas.unidadvictimas.gov.co/ApiDigitacion/api/Digitacion/ConsultarFormularioDinamicosp';
       //let    url       = 'http://localhost:81/api/Digitacion/ConsultarFormularioDinamicosp';
 
       //
